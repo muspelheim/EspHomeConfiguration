@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  esphomeyaml:
+    container_name: esphomeyaml
+    image: ottowinter/esphomeyaml
+    network_mode: host
+    ports:
+      - 6052:6052
+      - 6123:6123
+    volumes:
+      - ./config:/config
+    command: config/ dashboard
+    restart: on-failure
